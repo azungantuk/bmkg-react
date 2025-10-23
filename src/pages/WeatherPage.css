@@ -1,0 +1,55 @@
+/* Container hari pertama */
+.day-today {
+  margin-bottom: 2rem;
+  background-color: #e8f3ff; /* biru lembut */
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Container hari-hari berikutnya */
+.day-next {
+  margin-bottom: 1.5rem;
+}
+
+/* Grid untuk Hari Ini — tampil satu baris penuh */
+.forecast-grid.single-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.forecast-grid.single-row .forecast-card {
+  flex: 0 0 auto;
+  min-width: 200px;
+  scroll-snap-align: start;
+}
+
+/* Grid untuk hari berikutnya — tampil sejajar */
+.forecast-grid.multi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Gaya kartu cuaca umum */
+.forecast-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-4px);
+}
+
+.forecast-card img {
+  width: 48px;
+  height: 48px;
+  margin: 0.5rem 0;
+}
