@@ -50,23 +50,25 @@ function WeatherPage() {
 
   return (
     <div className="container">
-      <h2>Cuaca di {weather?.lokasi?.desa}</h2>
+      <div>
+      <h1>Cuaca di {weather?.lokasi?.desa}</h1>
       <p>
         {weather?.lokasi?.kecamatan}, {weather?.lokasi?.kotkab},{" "}
         {weather?.lokasi?.provinsi}
       </p>
+      </div>
 
+      <p></p><p></p>
       <Link to="/" className="back-link">
         ← Ganti lokasi
       </Link>
-      <p> </p>
-
+      
 {weather?.data?.[0]?.cuaca?.map((hari, i) => (
   <div
     key={i}
     className={`day ${i === 0 ? "day-today" : "day-next"}`} // 👈 tambahkan class berbeda
   >
-    <h3>{getHariLabel(i)}</h3>
+    <h2>{getHariLabel(i)}</h2>
     <div className={`forecast-grid ${i === 0 ? "single-row" : "multi-row"}`}>
       {hari.map((jam, j) => (
         <div key={j} className="forecast-card">
